@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.typesafenavigation" />
+                  <option name="mobileSdkAppId" value="1:105166441771:android:5aaa03e8036e029835496e" />
+                  <option name="projectId" value="todofirebase-97736" />
+                  <option name="projectNumber" value="105166441771" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

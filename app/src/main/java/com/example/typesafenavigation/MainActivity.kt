@@ -13,8 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
-import com.example.typesafenavigation.navigation.SetupNavGraph
-import com.example.typesafenavigation.ui.theme.TypeSafeNavigationTheme
+import com.example.typesafenavigation.todoappwithfirebase.core.presentation.ui.theme.TypeSafeNavigationTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +36,7 @@ class MainActivity : ComponentActivity() {
                             .padding(innerPadding)
 
                     ) {
-                        SetupNavGraph()
+                        // SetupNavGraph()
                         // NestedNavigation()
                     }
 

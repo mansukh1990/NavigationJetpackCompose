@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import kotlin.reflect.typeOf
 
 @Composable
 fun SetupNavGraph() {
@@ -21,18 +22,30 @@ fun SetupNavGraph() {
             FirstScreenComposable {
                 navController.navigate(
                     Screen.SecondScreen(
-                        name = "Mansukh Mano",
-                        age = "33"
+                        null
                     )
                 )
             }
         }
-        composable<Screen.SecondScreen> {
-            val args = it.toRoute<Screen.SecondScreen>()
+        composable<Screen.SecondScreen>(
+            typeMap = mapOf(
+                typeOf<Dummy>() to CustomNavType<Dummy>(
+                    Dummy::class.java, Dummy.serializer()
+                ),
+                typeOf<Dummy?>() to CustomNavType<Dummy>(
+                    Dummy::class.java, Dummy.serializer()
+                )
+            )
+        ) {
+            val args = it.toRoute<Screen.SecondScreen>().dummy
+            val name = args?.name ?: "null"
+            val age = args?.age ?: 0
             LaunchedEffect(key1 = Unit) {
-                Log.d("Navigation", "${args.name} ${args.age}")
+                Log.d("Navigation", "$name $age")
             }
-            SecondScreenComposable {
+            SecondScreenComposable(
+                name = name, age = age.toString()
+            ) {
                 navController.navigate(Screen.FirstScreen) {
                     popUpTo<Screen.FirstScreen> { inclusive = true }
                 }

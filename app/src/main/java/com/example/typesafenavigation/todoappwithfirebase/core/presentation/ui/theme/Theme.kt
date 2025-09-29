@@ -1,6 +1,5 @@
-package com.example.typesafenavigation.ui.theme
+package com.example.typesafenavigation.todoappwithfirebase.core.presentation.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
