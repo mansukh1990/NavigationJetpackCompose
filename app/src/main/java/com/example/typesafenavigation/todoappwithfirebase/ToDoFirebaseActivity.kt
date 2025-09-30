@@ -24,7 +24,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.typesafenavigation.R
-import com.example.typesafenavigation.todoappwithfirebase.core.presentation.ui.theme.TypeSafeNavigationTheme
+import com.example.typesafenavigation.ui.theme.TypeSafeNavigationTheme
 import com.example.typesafenavigation.todoappwithfirebase.todo.presentation.ToDoScreen
 import com.example.typesafenavigation.todoappwithfirebase.todo.presentation.ToDoVIewModel
 

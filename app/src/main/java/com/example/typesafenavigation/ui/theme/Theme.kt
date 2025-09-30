@@ -1,4 +1,4 @@
-package com.example.typesafenavigation.todoappwithfirebase.core.presentation.ui.theme
+package com.example.typesafenavigation.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
