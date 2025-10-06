@@ -19,3 +19,12 @@ sealed interface AuthenticationRoot {
     @Serializable
     data object LoginScreen : AuthenticationRoot
 }
+
+sealed interface HomeScreenDest {
+
+    @Serializable
+    data object HomeRoot : HomeScreenDest
+
+    @Serializable
+    data object HomeScreen : HomeScreenDest
+}

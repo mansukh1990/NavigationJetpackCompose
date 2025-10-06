@@ -1,11 +1,11 @@
 package com.example.typesafenavigation.app.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
+import com.example.typesafenavigation.app.screens.HomeScreen
 import com.example.typesafenavigation.app.screens.LoginScreen
 import com.example.typesafenavigation.app.screens.PrivacyAndPolicyScreen
 import com.example.typesafenavigation.app.screens.SignUpScreen
@@ -13,7 +13,7 @@ import com.example.typesafenavigation.app.screens.TermsAndConditionsScreen
 
 
 @Composable
-fun PostOfficeNestedNavigation(modifier: Modifier = Modifier) {
+fun PostOfficeNestedNavigation() {
 
     val navController = rememberNavController()
 
@@ -32,6 +32,10 @@ fun PostOfficeNestedNavigation(modifier: Modifier = Modifier) {
                     },
                     onLoginClick = {
                         navController.navigate(AuthenticationRoot.LoginScreen)
+                    },
+                    onRegisterClick = {
+                        navController.navigate(HomeScreenDest.HomeScreen) {
+                        }
                     }
                 )
             }
@@ -52,11 +56,28 @@ fun PostOfficeNestedNavigation(modifier: Modifier = Modifier) {
                     onBack = {
                         navController.popBackStack()
                     },
-                    onRegister = {
+                    onLoginClick = {
+                        navController.navigate(HomeScreenDest.HomeScreen)
+                    },
+                    onRegisterClick = {
                         navController.navigate(AuthenticationRoot.SignUpScreen)
-                    })
+                    }
+                )
             }
         }
+        navigation<HomeScreenDest.HomeRoot>(startDestination = HomeScreenDest.HomeScreen) {
+            composable<HomeScreenDest.HomeScreen> {
+                HomeScreen(
+                    onBack = {
+                        navController.popBackStack()
+                    },
+                    onLogout = {
+                        navController.navigate(AuthenticationRoot.LoginScreen)
+                    }
+                )
+            }
+        }
+
 
     }
 }

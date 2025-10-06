@@ -13,17 +13,22 @@ import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.Logout
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -99,7 +104,8 @@ fun HeadingTextComponent(value: String) {
 fun TextFieldComponent(
     labelValue: String,
     painterResource: Painter,
-    onTextSelected: (String) -> Unit
+    onTextSelected: (String) -> Unit,
+    errorStatus: Boolean = false
 ) {
 
     var textValue by remember { mutableStateOf("") }
@@ -116,6 +122,7 @@ fun TextFieldComponent(
         label = {
             Text(text = labelValue)
         },
+        isError = !errorStatus,
         colors = OutlinedTextFieldDefaults.colors(
             focusedBorderColor = colorResource(R.color.colorPrimary),
             focusedLabelColor = colorResource(R.color.colorPrimary),
@@ -136,7 +143,8 @@ fun TextFieldComponent(
 fun PasswordTextFieldComponent(
     labelValue: String,
     painterResource: Painter,
-    onTextSelected: (String) -> Unit
+    onTextSelected: (String) -> Unit,
+    errorStatus: Boolean = false
 ) {
 
     var passwordValue by remember { mutableStateOf("") }
@@ -156,6 +164,7 @@ fun PasswordTextFieldComponent(
         label = {
             Text(text = labelValue)
         },
+        isError = !errorStatus,
         colors = OutlinedTextFieldDefaults.colors(
             focusedBorderColor = colorResource(R.color.colorPrimary),
             focusedLabelColor = colorResource(R.color.colorPrimary),
@@ -201,9 +210,10 @@ fun CheckBoxComponent(
     value: String,
     onPrivacyPolicyClick: () -> Unit,
     onTermsClick: () -> Unit,
+    onCheckedChange: (Boolean) -> Unit
 ) {
 
-    var checkedState: Boolean by remember { mutableStateOf(false) }
+    var checkedState by remember { mutableStateOf(false) }
 
     Row(
         modifier = Modifier
@@ -215,6 +225,8 @@ fun CheckBoxComponent(
             checked = checkedState,
             onCheckedChange = {
                 checkedState = !checkedState
+                onCheckedChange.invoke(it)
+
             }
         )
         SpannableTextLayout(
@@ -298,13 +310,15 @@ fun SpannableTextLayout(
 @Composable
 fun ButtonComponent(
     value: String,
-    onButtonClick: () -> Unit
+    onButtonClick: () -> Unit,
+    isEnable: Boolean
 ) {
 
     Button(
         onClick = {
             onButtonClick.invoke()
         },
+        enabled = isEnable,
         modifier = Modifier
             .fillMaxWidth()
             .heightIn(48.dp),
@@ -412,7 +426,12 @@ fun SpannableLoginTextLayout(
             )
                 .firstOrNull()?.let { span ->
                     Log.d("ClickableTextComponent", "{${span.item}}")
-                    onLoginClick()
+                    if (tryingToLogin) {
+                        onLoginClick()
+                    } else {
+                        onRegisterClick()
+                    }
+
                 }
         }
 
@@ -437,5 +456,50 @@ fun UnderLineTextComponent(value: String) {
         color = colorResource(R.color.colorGray),
         textAlign = TextAlign.Center
     )
+
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun AppToolBar(
+    toolbarTitle: String,
+    onLogoutClick: () -> Unit
+) {
+    TopAppBar(
+        title = {
+            Text(
+                modifier = Modifier.padding(start = 20.dp),
+                text = toolbarTitle,
+                style = TextStyle(
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
+                )
+            )
+        },
+        navigationIcon = {
+            Icon(
+                imageVector = Icons.Filled.Menu, contentDescription = "menu",
+                tint = Color.White
+            )
+        },
+        actions = {
+            IconButton(
+                onClick = {
+                    onLogoutClick()
+                }
+            ) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.Logout, contentDescription = "logout",
+                    tint = Color.White
+                )
+
+            }
+        },
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = Color.Blue
+        )
+    )
+
 
 }
