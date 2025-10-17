@@ -13,8 +13,6 @@ import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.Logout
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Button
@@ -40,6 +38,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
@@ -425,7 +424,6 @@ fun SpannableLoginTextLayout(
                 end = offset
             )
                 .firstOrNull()?.let { span ->
-                    Log.d("ClickableTextComponent", "{${span.item}}")
                     if (tryingToLogin) {
                         onLoginClick()
                     } else {
@@ -453,7 +451,7 @@ fun UnderLineTextComponent(value: String) {
             fontStyle = FontStyle.Normal,
         ),
         textDecoration = TextDecoration.Underline,
-        color = colorResource(R.color.colorGray),
+        color = colorResource(id = R.color.colorGray),
         textAlign = TextAlign.Center
     )
 
@@ -463,9 +461,18 @@ fun UnderLineTextComponent(value: String) {
 @Composable
 fun AppToolBar(
     toolbarTitle: String,
-    onLogoutClick: () -> Unit
+    navigationIcon: ImageVector,           // dynamic navigation icon
+    onNavigationClick: () -> Unit = {},    // optional navigation click
+    actionIcon: ImageVector? = null,       // optional action icon (like logout/search)
+    onActionClick: (() -> Unit)? = null,   // optional action click
+    backgroundColor: Color = Color.Blue,   // customizable color
+    textColor: Color = Color.White
+
 ) {
     TopAppBar(
+        modifier = Modifier.clip(
+            shape = RoundedCornerShape(bottomStart = 20.dp, bottomEnd = 20.dp)
+        ),
         title = {
             Text(
                 modifier = Modifier.padding(start = 20.dp),
@@ -473,31 +480,39 @@ fun AppToolBar(
                 style = TextStyle(
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.White
+                    color = textColor
                 )
             )
         },
         navigationIcon = {
-            Icon(
-                imageVector = Icons.Filled.Menu, contentDescription = "menu",
-                tint = Color.White
-            )
-        },
-        actions = {
-            IconButton(
-                onClick = {
-                    onLogoutClick()
-                }
-            ) {
+            IconButton(onClick = {
+                onNavigationClick()
+            }) {
                 Icon(
-                    imageVector = Icons.AutoMirrored.Filled.Logout, contentDescription = "logout",
+                    imageVector = navigationIcon, contentDescription = "NavigationIcon",
                     tint = Color.White
                 )
-
             }
+
+        },
+        actions = {
+            if (actionIcon != null && onActionClick != null) {
+                IconButton(
+                    onClick = {
+                        onActionClick()
+                    }
+                ) {
+                    Icon(
+                        imageVector = actionIcon, contentDescription = "ActionIcon",
+                        tint = Color.White
+                    )
+
+                }
+            }
+
         },
         colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = Color.Blue
+            containerColor = backgroundColor
         )
     )
 

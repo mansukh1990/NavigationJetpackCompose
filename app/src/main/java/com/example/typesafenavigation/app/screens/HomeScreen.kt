@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.typesafenavigation.R
+import com.example.typesafenavigation.app.components.AppBarIcon
 import com.example.typesafenavigation.app.components.AppToolBar
 import com.example.typesafenavigation.app.data.SignupViewModel
 
@@ -23,11 +24,15 @@ fun HomeScreen(
     Scaffold(
         topBar = {
             AppToolBar(
-                toolbarTitle = stringResource(R.string.home),
-                onLogoutClick = {
+                toolbarTitle = stringResource(id = R.string.home),
+                onActionClick = {
                     loginViewModel.logout()
                     onLogout()
-                })
+                },
+                navigationIcon = AppBarIcon.Menu.icon,
+                actionIcon = AppBarIcon.Logout.icon,
+                onNavigationClick = {}
+            )
         }
     ) { paddingValues ->
 
