@@ -31,7 +31,9 @@ fun HomeScreen(
                 },
                 navigationIcon = AppBarIcon.Menu.icon,
                 actionIcon = AppBarIcon.Logout.icon,
-                onNavigationClick = {}
+                onNavigationClick = {
+                    onBack()
+                }
             )
         }
     ) { paddingValues ->
