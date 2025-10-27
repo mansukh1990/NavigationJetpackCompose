@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name=".todoappwithfirebase.ToDoFirebaseActivity"
+            android:name=".todoAppWithFirebaseRealtimeDatabase.ToDoFirebaseActivity"
             android:exported="false" />
         <activity
             android:name=".app.PostOfficeActivity"
