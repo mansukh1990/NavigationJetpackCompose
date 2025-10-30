@@ -25,6 +25,10 @@
             android:exported="false" />
         <activity
             android:name=".app.PostOfficeActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".cloudFireStore.screens.CarListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
