@@ -59,6 +59,10 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.firebase.storage)
     implementation(libs.firebase.firestore)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -77,4 +81,15 @@ dependencies {
 
     //viewmodel
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    //supabase
+    implementation(platform(libs.bom))
+    implementation(libs.postgrest.kt)
+    implementation(libs.ktor.client.android)
+    implementation(libs.realtime.kt)
+
+    //coil
+    implementation(libs.coil.compose)
+    implementation(libs.coil.gif)
+    implementation(libs.coil.svg)
 }

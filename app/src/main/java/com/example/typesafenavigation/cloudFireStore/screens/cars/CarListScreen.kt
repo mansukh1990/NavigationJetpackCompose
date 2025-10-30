@@ -42,7 +42,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 fun CarListScreen(
     viewModel: CarListViewModel = viewModel()
 ) {
-
     val cars by viewModel.carsList.collectAsStateWithLifecycle()
     var showAddDialog by remember { mutableStateOf(false) }
     var showUpdateDialog by remember { mutableStateOf(false) }
