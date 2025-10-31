@@ -1,4 +1,4 @@
-package com.example.typesafenavigation.app.data
+package com.example.typesafenavigation.loginAndSignupWithFirebase.data
 
 data class SignupUiState(
     var firstName: String = "",

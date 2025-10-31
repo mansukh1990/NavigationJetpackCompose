@@ -1,4 +1,4 @@
-package com.example.typesafenavigation.app
+package com.example.typesafenavigation.loginAndSignupWithFirebase
 
 import android.annotation.SuppressLint
 import android.os.Bundle

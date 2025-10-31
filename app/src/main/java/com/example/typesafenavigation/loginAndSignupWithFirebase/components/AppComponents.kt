@@ -1,4 +1,4 @@
-package com.example.typesafenavigation.app.components
+package com.example.typesafenavigation.loginAndSignupWithFirebase.components
 
 import android.util.Log
 import androidx.compose.foundation.background

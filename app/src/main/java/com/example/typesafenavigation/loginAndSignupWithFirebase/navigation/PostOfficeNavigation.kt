@@ -1,15 +1,15 @@
-package com.example.typesafenavigation.app.navigation
+package com.example.typesafenavigation.loginAndSignupWithFirebase.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
-import com.example.typesafenavigation.app.screens.HomeScreen
-import com.example.typesafenavigation.app.screens.LoginScreen
-import com.example.typesafenavigation.app.screens.PrivacyAndPolicyScreen
-import com.example.typesafenavigation.app.screens.SignUpScreen
-import com.example.typesafenavigation.app.screens.TermsAndConditionsScreen
+import com.example.typesafenavigation.loginAndSignupWithFirebase.screens.HomeScreen
+import com.example.typesafenavigation.loginAndSignupWithFirebase.screens.LoginScreen
+import com.example.typesafenavigation.loginAndSignupWithFirebase.screens.PrivacyAndPolicyScreen
+import com.example.typesafenavigation.loginAndSignupWithFirebase.screens.SignUpScreen
+import com.example.typesafenavigation.loginAndSignupWithFirebase.screens.TermsAndConditionsScreen
 
 
 @Composable

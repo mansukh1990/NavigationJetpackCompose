@@ -1,4 +1,4 @@
-package com.example.typesafenavigation.app.data.rule
+package com.example.typesafenavigation.loginAndSignupWithFirebase.data.rule
 
 object Validator {
 

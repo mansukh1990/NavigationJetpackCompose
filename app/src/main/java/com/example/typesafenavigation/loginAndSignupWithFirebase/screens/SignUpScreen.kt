@@ -1,4 +1,4 @@
-package com.example.typesafenavigation.app.screens
+package com.example.typesafenavigation.loginAndSignupWithFirebase.screens
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,16 +18,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.typesafenavigation.R
-import com.example.typesafenavigation.app.components.ButtonComponent
-import com.example.typesafenavigation.app.components.CheckBoxComponent
-import com.example.typesafenavigation.app.components.DividerTextComponent
-import com.example.typesafenavigation.app.components.HeadingTextComponent
-import com.example.typesafenavigation.app.components.NormalTextComponent
-import com.example.typesafenavigation.app.components.PasswordTextFieldComponent
-import com.example.typesafenavigation.app.components.SpannableLoginTextLayout
-import com.example.typesafenavigation.app.components.TextFieldComponent
-import com.example.typesafenavigation.app.data.SignupViewModel
-import com.example.typesafenavigation.app.data.SignupUiEvent
+import com.example.typesafenavigation.loginAndSignupWithFirebase.components.ButtonComponent
+import com.example.typesafenavigation.loginAndSignupWithFirebase.components.CheckBoxComponent
+import com.example.typesafenavigation.loginAndSignupWithFirebase.components.DividerTextComponent
+import com.example.typesafenavigation.loginAndSignupWithFirebase.components.HeadingTextComponent
+import com.example.typesafenavigation.loginAndSignupWithFirebase.components.NormalTextComponent
+import com.example.typesafenavigation.loginAndSignupWithFirebase.components.PasswordTextFieldComponent
+import com.example.typesafenavigation.loginAndSignupWithFirebase.components.SpannableLoginTextLayout
+import com.example.typesafenavigation.loginAndSignupWithFirebase.components.TextFieldComponent
+import com.example.typesafenavigation.loginAndSignupWithFirebase.data.SignupViewModel
+import com.example.typesafenavigation.loginAndSignupWithFirebase.data.SignupUiEvent
 
 @Composable
 fun SignUpScreen(

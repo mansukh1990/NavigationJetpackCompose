@@ -1,4 +1,4 @@
-package com.example.typesafenavigation.app.navigation
+package com.example.typesafenavigation.loginAndSignupWithFirebase.navigation
 
 import kotlinx.serialization.Serializable
 

@@ -1,4 +1,4 @@
-package com.example.typesafenavigation.app.screens
+package com.example.typesafenavigation.loginAndSignupWithFirebase.screens
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -9,10 +9,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.typesafenavigation.R
-import com.example.typesafenavigation.app.components.HeadingTextComponent
+import com.example.typesafenavigation.loginAndSignupWithFirebase.components.HeadingTextComponent
 
 @Composable
-fun PrivacyAndPolicyScreen(onBack: () -> Unit) {
+fun TermsAndConditionsScreen(onBack: () -> Unit) {
 
     Surface(
         modifier = Modifier
@@ -20,7 +20,7 @@ fun PrivacyAndPolicyScreen(onBack: () -> Unit) {
             .padding(16.dp),
         color = Color.White
     ) {
-        HeadingTextComponent(value = stringResource(id = R.string.str_privacy_policy))
+        HeadingTextComponent(value = stringResource(id = R.string.str_terms_and_conditions))
     }
 
 }

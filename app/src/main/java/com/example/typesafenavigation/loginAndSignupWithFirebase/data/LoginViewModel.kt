@@ -1,9 +1,9 @@
-package com.example.typesafenavigation.app.data
+package com.example.typesafenavigation.loginAndSignupWithFirebase.data
 
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.example.typesafenavigation.app.data.rule.Validator
+import com.example.typesafenavigation.loginAndSignupWithFirebase.data.rule.Validator
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginViewModel : ViewModel() {

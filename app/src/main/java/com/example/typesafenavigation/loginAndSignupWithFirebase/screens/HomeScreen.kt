@@ -1,4 +1,4 @@
-package com.example.typesafenavigation.app.screens
+package com.example.typesafenavigation.loginAndSignupWithFirebase.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,9 +11,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.typesafenavigation.R
-import com.example.typesafenavigation.app.components.AppBarIcon
-import com.example.typesafenavigation.app.components.AppToolBar
-import com.example.typesafenavigation.app.data.SignupViewModel
+import com.example.typesafenavigation.loginAndSignupWithFirebase.components.AppBarIcon
+import com.example.typesafenavigation.loginAndSignupWithFirebase.components.AppToolBar
+import com.example.typesafenavigation.loginAndSignupWithFirebase.data.SignupViewModel
 
 @Composable
 fun HomeScreen(

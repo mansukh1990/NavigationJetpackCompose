@@ -1,4 +1,4 @@
-package com.example.typesafenavigation.app.components
+package com.example.typesafenavigation.loginAndSignupWithFirebase.components
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack

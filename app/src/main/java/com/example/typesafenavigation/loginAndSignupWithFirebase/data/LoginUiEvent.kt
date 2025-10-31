@@ -1,4 +1,4 @@
-package com.example.typesafenavigation.app.data
+package com.example.typesafenavigation.loginAndSignupWithFirebase.data
 
 sealed class LoginUiEvent {
     data class EmailChange(val email: String) : LoginUiEvent()

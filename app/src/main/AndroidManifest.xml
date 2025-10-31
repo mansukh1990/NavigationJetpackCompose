@@ -35,7 +35,7 @@
             android:name=".todoAppWithFirebaseRealtimeDatabase.ToDoFirebaseActivity"
             android:exported="false" />
         <activity
-            android:name=".app.PostOfficeActivity"
+            android:name=".loginAndSignupWithFirebase.PostOfficeActivity"
             android:exported="false" />
         <activity
             android:name=".cloudFireStore.screens.CarListActivity"
