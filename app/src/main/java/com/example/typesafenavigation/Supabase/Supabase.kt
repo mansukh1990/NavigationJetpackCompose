@@ -212,7 +212,8 @@ class SupabaseActivity : ComponentActivity() {
 
     @OptIn(SupabaseExperimental::class)
     fun getCafeListRealtime() =
-        supabase.from("cafe").selectAsFlow(Cafe::id)
+        supabase.from("cafe")
+            .selectAsFlow(Cafe::id)
 
     suspend fun getCafeList() =
         supabase.from("cafe")
@@ -234,6 +235,7 @@ class SupabaseActivity : ComponentActivity() {
             {
                 set("name", cafe.name)
                 set("description", cafe.description)
+                set("image", cafe.image)
             }
         ) {
             filter {
