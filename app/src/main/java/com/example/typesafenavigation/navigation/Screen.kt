@@ -4,7 +4,6 @@ import android.os.Build
 import android.os.Parcelable
 import androidx.navigation.NavType
 import androidx.savedstate.SavedState
-import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -14,17 +13,9 @@ sealed interface Screen {
     data object FirstScreen : Screen
 
     @Serializable
-    data class SecondScreen(
-        val dummy: Dummy?
-    ) : Screen
+    object SecondScreen : Screen
 
 }
-
-@Serializable
-@Parcelize
-data class Dummy(
-    val name: String, val age: Int
-) : Parcelable
 
 
 class CustomNavType<T : Parcelable>(

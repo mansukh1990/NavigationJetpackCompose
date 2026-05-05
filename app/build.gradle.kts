@@ -1,10 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlinx.serialization)
-    alias(libs.plugins.kotlin.parcelize)
-    id("com.google.gms.google-services")
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.compose.compiler)
+    id("com.google.dagger.hilt.android")
+    id("org.jetbrains.kotlin.plugin.serialization")
+    id("kotlin-parcelize")
 
 }
 
@@ -32,11 +33,14 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = "11"
+    //noinspection WrongGradleMethod
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+        }
     }
     buildFeatures {
         compose = true
@@ -53,16 +57,13 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.firebase.database)
-    implementation(libs.androidx.material3)
     implementation(libs.firebase.auth)
-    implementation(libs.androidx.ui)
-    implementation(libs.firebase.storage)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
     implementation(libs.firebase.firestore)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.storage)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -71,25 +72,26 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
-    implementation(libs.navigation.compose)
-    implementation(libs.kotlinx.serialization)
-
-    //Firebase
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.analytics)
     implementation(libs.androidx.compose.material.icons.extended)
 
-    //viewmodel
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
 
-    //supabase
+    implementation(libs.androidx.navigation.compose)
+
     implementation(platform(libs.bom))
     implementation(libs.postgrest.kt)
-    implementation(libs.ktor.client.android)
+    implementation(libs.auth.kt)
     implementation(libs.realtime.kt)
 
-    //coil
-    implementation(libs.coil.compose)
-    implementation(libs.coil.gif)
-    implementation(libs.coil.svg)
+
+    implementation("androidx.compose.material:material")
+
+    implementation ("com.google.dagger:hilt-android:2.59.2")
+    ksp ("com.google.dagger:hilt-compiler:2.59.2")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0")
+
+    implementation("androidx.navigation:navigation-compose:2.9.7")
+    implementation("io.coil-kt:coil-compose:2.6.0")
 }

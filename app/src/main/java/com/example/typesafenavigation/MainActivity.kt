@@ -12,8 +12,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
-import com.example.typesafenavigation.textwithshadow.TextMainScreen
 import com.example.typesafenavigation.ui.theme.TypeSafeNavigationTheme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,9 +35,10 @@ class MainActivity : ComponentActivity() {
                             .padding(innerPadding)
 
                     ) {
-                        // SetupNavGraph()
+                        //SetupNavGraph()
                         // NestedNavigation()
-                        TextMainScreen()
+                        //TextMainScreen()
+                        //NavigationTabExample()
                     }
 
                 }

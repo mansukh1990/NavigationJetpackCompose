@@ -17,13 +17,22 @@
 
         <activity
             android:name=".MainActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.TypeSafeNavigation">
 
         </activity>
 
         <activity
-            android:name=".Supabase.SupabaseActivity"
+            android:name=".supabase.SupabaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".authenticationWithFirebase.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".todoAppWithFirebaseRealtimeDatabase.ToDoFirebaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".loginAndSignupWithFirebase.PostOfficeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,12 +40,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".todoAppWithFirebaseRealtimeDatabase.ToDoFirebaseActivity"
-            android:exported="false" />
-        <activity
-            android:name=".loginAndSignupWithFirebase.PostOfficeActivity"
-            android:exported="false" />
         <activity
             android:name=".cloudFireStore.screens.CarListActivity"
             android:exported="false" />

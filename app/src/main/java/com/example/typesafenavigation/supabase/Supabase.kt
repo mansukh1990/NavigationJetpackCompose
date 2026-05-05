@@ -1,4 +1,4 @@
-package com.example.typesafenavigation.Supabase
+package com.example.typesafenavigation.supabase
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

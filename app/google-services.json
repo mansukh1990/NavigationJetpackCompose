@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "105166441771",
+    "firebase_url": "https://todofirebase-97736-default-rtdb.firebaseio.com",
     "project_id": "todofirebase-97736",
     "storage_bucket": "todofirebase-97736.firebasestorage.app"
   },
@@ -12,7 +13,12 @@
           "package_name": "com.example.typesafenavigation"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "105166441771-ukodrchgqt3c0hm7nce0mvo5t7v4ki9c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAqzE5f8QroRAgbjD-nF7TZYfQc9Apo9VY"
@@ -20,7 +26,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "105166441771-ukodrchgqt3c0hm7nce0mvo5t7v4ki9c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

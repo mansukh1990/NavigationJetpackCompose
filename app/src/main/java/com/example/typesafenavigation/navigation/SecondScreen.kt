@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun SecondScreenComposable(name: String, age: String, onclick: () -> Unit) {
+fun SecondScreenComposable(onclick: () -> Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -27,7 +27,7 @@ fun SecondScreenComposable(name: String, age: String, onclick: () -> Unit) {
             onClick = onclick
         ) {
             Column {
-                Text("age -> $age, name -> $name")
+                Text("Second Screen")
                 Spacer(Modifier.height(15.dp))
                 Text(text = "Go To First Screen")
             }
